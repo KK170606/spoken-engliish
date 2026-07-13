@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LingoFlow | Spoken English Tutor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="profile-block">
+          <div class="brand-row">
+            <span class="material-symbols-outlined">school</span>
+            <strong>LingoFlow</strong>
+          </div>
+          <img
+            class="profile-avatar"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcq_oA8AOQgfSMNYepdl2eG-0j8S6eQwfpSjBdYMrWT7FtRYZFDEF49giWQJ0gKk-tYbLRh02dqS7ng-t6GuL5FjxVferP7sZXn9Slogz8L00jElinftefI_vTUzmMtOUvKfqN2LMcRsGtMwA4Eaajm8rWAewVRFqv4jPLCQHKpL9R4jiKcwwfAPaaDgPrM7n6oRtO-26HtJxSeU9zzd40MtVo4wKKVsvJHUbK806N0GGQKlOOlFgUcAmpAguVcefGd0_Uv7QzoPE"
+            alt="Academic learner avatar"
+          />
+          <h2 id="profileName">Learner</h2>
+          <p id="profileLevel">B1 Intermediate</p>
+          <span class="streak-pill">0 day streak</span>
+        </div>
+
+        <nav class="side-nav">
+          <button class="nav-link active" data-section="dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+          </button>
+          <button class="nav-link" data-section="topics">
+            <span class="material-symbols-outlined">menu_book</span>
+            Grammar Topics
+          </button>
+          <button class="nav-link" data-section="lesson">
+            <span class="material-symbols-outlined">history_edu</span>
+            Daily Lesson
+          </button>
+          <button class="nav-link" data-section="chat">
+            <span class="material-symbols-outlined">forum</span>
+            Voice AI Chat
+          </button>
+          <button class="nav-link" data-section="interview">
+            <span class="material-symbols-outlined">work</span>
+            AI Interview
+          </button>
+          <button class="nav-link" data-section="business">
+            <span class="material-symbols-outlined">groups</span>
+            Business Meeting
+          </button>
+          <button class="nav-link" data-section="quiz">
+            <span class="material-symbols-outlined">quiz</span>
+            Daily Quiz
+          </button>
+          <button class="nav-link" data-section="speaking">
+            <span class="material-symbols-outlined">record_voice_over</span>
+            Practice Hub
+          </button>
+          <button class="nav-link" data-section="progress">
+            <span class="material-symbols-outlined">monitoring</span>
+            Progress
+          </button>
+          <button class="nav-link" data-section="community">
+            <span class="material-symbols-outlined">diversity_3</span>
+            Community
+          </button>
+          <button class="nav-link" data-section="profile">
+            <span class="material-symbols-outlined">person</span>
+            Profile
+          </button>
+        </nav>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <button class="icon-button" id="menuToggle" aria-label="Toggle navigation">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div>
+            <p class="eyebrow">Spoken English Tutor</p>
+            <h1 id="pageTitle">Dashboard</h1>
+          </div>
+          <div class="topbar-actions">
+            <span class="api-status" id="apiStatus">API checking</span>
+            <span class="api-status online" id="liveSyncStatus">Live sync</span>
+            <span class="user-chip" id="userChip">Guest</span>
+            <button class="secondary-button" id="logoutButton" type="button">
+              Sign Out
+            </button>
+            <button class="icon-button" aria-label="Search">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <section class="view active" id="dashboard" aria-labelledby="dashboard-title">
+            <div class="hero-panel">
+              <div>
+                <p class="eyebrow hero-eyebrow">Today</p>
+                <h2 id="dashboard-title">Welcome back, Learner!</h2>
+                <p class="hero-copy">Learn English. Build your future with structured speaking practice.</p>
+              </div>
+              <div class="quote-box">
+                <p>"The limits of my language mean the limits of my world."</p>
+                <span>Ludwig Wittgenstein</span>
+              </div>
+            </div>
+
+            <div class="content-grid">
+              <article class="card span-8">
+                <div class="card-heading">
+                  <div>
+                    <span class="label-chip">Today's goal</span>
+                    <h3>Business Negotiations II</h3>
+                    <p>Master softer disagreement patterns for professional conversations.</p>
+                  </div>
+                  <button class="round-action" data-section="lesson" aria-label="Start speaking lesson">
+                    <span class="material-symbols-outlined">mic</span>
+                  </button>
+                </div>
+                <div class="lesson-steps">
+                  <div>
+                    <span class="material-symbols-outlined success">check_circle</span>
+                    Vocabulary Refresh
+                  </div>
+                  <div>
+                    <span class="material-symbols-outlined primary">play_circle</span>
+                    Roleplay: The Salary Review
+                  </div>
+                </div>
+                <button class="primary-button" data-section="lesson">
+                  Start Lesson
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </article>
+
+              <article class="card span-4">
+                <div class="metric-row">
+                  <h3>Your Progress</h3>
+                  <strong id="dashboardProgressPercent">0%</strong>
+                </div>
+                <div class="progress-bar"><span id="dashboardProgressBar" style="width: 0%"></span></div>
+                <div class="metric-row muted-row">
+                  <span>Weekly Target</span>
+                  <span id="dashboardUnits">0/20 units</span>
+                </div>
+                <div class="badge-row">
+                  <span><span class="material-symbols-outlined">workspace_premium</span> Grammar King</span>
+                  <span><span class="material-symbols-outlined">bolt</span> Flash Card Pro</span>
+                </div>
+              </article>
+
+              <article class="task-card mint">
+                <span class="material-symbols-outlined">groups</span>
+                <h3>Live Group Session</h3>
+                <p>Starts in 15 minutes.</p>
+                <button>Join Room</button>
+              </article>
+              <article class="task-card">
+                <span class="material-symbols-outlined">edit_note</span>
+                <h3>Journal Task</h3>
+                <p>Write about your last vacation.</p>
+                <button>Write Now</button>
+              </article>
+              <article class="task-card">
+                <span class="material-symbols-outlined">quiz</span>
+                <h3>Review Quiz</h3>
+                <p>10 questions from last week.</p>
+                <button data-section="quiz">Start Quiz</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="topics" aria-labelledby="topics-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Curriculum</p>
+                <h2 id="topics-title">Grammar Topics</h2>
+              </div>
+              <div class="progress-summary">
+                <span>42% complete</span>
+                <div class="progress-bar"><span style="width: 42%"></span></div>
+              </div>
+            </div>
+
+            <div class="chip-row" id="topicFilters">
+              <button class="chip active" data-filter="all">All Topics</button>
+              <button class="chip" data-filter="fundamentals">Fundamentals</button>
+              <button class="chip" data-filter="structure">Sentence Structure</button>
+              <button class="chip" data-filter="professional">Professional</button>
+              <button class="chip" data-filter="advanced">Advanced</button>
+            </div>
+
+            <div class="topic-grid">
+              <article class="topic-card" data-topic-category="fundamentals">
+                <span class="topic-icon material-symbols-outlined">abc</span>
+                <span class="status done">Completed</span>
+                <h3>Nouns</h3>
+                <p>Master common, proper, abstract, and collective nouns in English sentences.</p>
+                <div class="progress-bar"><span style="width: 100%"></span></div>
+              </article>
+              <article class="topic-card" data-topic-category="fundamentals">
+                <span class="topic-icon material-symbols-outlined">schedule</span>
+                <span class="status">In Progress</span>
+                <h3>Tenses</h3>
+                <p>Understand past, present, and future timeframes and aspects.</p>
+                <button class="primary-button compact" data-section="lesson">Continue Lesson</button>
+              </article>
+              <article class="topic-card" data-topic-category="fundamentals">
+                <span class="topic-icon material-symbols-outlined">directions_run</span>
+                <h3>Verbs</h3>
+                <p>Action words, linking verbs, and auxiliary verb usage.</p>
+                <button class="text-button">Start Topic</button>
+              </article>
+              <article class="topic-card" data-topic-category="structure">
+                <span class="topic-icon material-symbols-outlined">sync_alt</span>
+                <h3>Active & Passive Voice</h3>
+                <p>Shift focus between the doer and receiver of an action.</p>
+              </article>
+              <article class="topic-card" data-topic-category="professional">
+                <span class="topic-icon material-symbols-outlined">work</span>
+                <h3>Business English</h3>
+                <p>Professional language patterns for career growth.</p>
+              </article>
+              <article class="topic-card" data-topic-category="structure">
+                <span class="topic-icon material-symbols-outlined">forum</span>
+                <h3>Direct & Indirect Speech</h3>
+                <p>Report speech accurately in meetings and daily conversations.</p>
+              </article>
+              <article class="topic-card" data-topic-category="fundamentals">
+                <span class="topic-icon material-symbols-outlined">article</span>
+                <h3>Articles</h3>
+                <p>Use a, an, the, and zero article naturally in everyday sentences.</p>
+              </article>
+              <article class="topic-card" data-topic-category="fundamentals">
+                <span class="topic-icon material-symbols-outlined">near_me</span>
+                <h3>Prepositions</h3>
+                <p>Practice time, place, movement, and dependent prepositions.</p>
+              </article>
+              <article class="topic-card" data-topic-category="structure">
+                <span class="topic-icon material-symbols-outlined">account_tree</span>
+                <h3>Conditionals</h3>
+                <p>Build zero, first, second, third, and mixed conditional sentences.</p>
+              </article>
+              <article class="topic-card" data-topic-category="advanced">
+                <span class="topic-icon material-symbols-outlined">join_inner</span>
+                <h3>Relative Clauses</h3>
+                <p>Connect ideas with who, which, that, where, and whose.</p>
+              </article>
+              <article class="topic-card" data-topic-category="advanced">
+                <span class="topic-icon material-symbols-outlined">psychology_alt</span>
+                <h3>Modals</h3>
+                <p>Express ability, permission, advice, possibility, and obligation.</p>
+              </article>
+              <article class="topic-card" data-topic-category="professional">
+                <span class="topic-icon material-symbols-outlined">handshake</span>
+                <h3>Polite Requests</h3>
+                <p>Make professional requests using softer, respectful wording.</p>
+              </article>
+              <article class="topic-card" data-topic-category="advanced">
+                <span class="topic-icon material-symbols-outlined">alt_route</span>
+                <h3>Phrasal Verbs</h3>
+                <p>Understand common verb particles used in natural English.</p>
+              </article>
+              <article class="topic-card" data-topic-category="structure">
+                <span class="topic-icon material-symbols-outlined">compare_arrows</span>
+                <h3>Comparatives</h3>
+                <p>Compare people, places, products, and ideas with precision.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="lesson" aria-labelledby="lesson-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow" id="lessonUnit">Unit 4: Verb Tenses</p>
+                <h2 id="lesson-title">Past Simple vs. Present Perfect</h2>
+              </div>
+              <div class="progress-summary">
+                <span id="lessonProgressLabel">65% complete</span>
+                <div class="progress-bar"><span id="lessonProgressBar" style="width: 65%"></span></div>
+              </div>
+            </div>
+
+            <div class="lesson-picker" id="lessonPicker" aria-label="Choose today's lesson">
+              <button class="chip active" data-lesson-index="0">Verb Tenses</button>
+              <button class="chip" data-lesson-index="1">Articles</button>
+              <button class="chip" data-lesson-index="2">Business Requests</button>
+              <button class="chip" data-lesson-index="3">Interview Answers</button>
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-main">
+                <article class="card">
+                  <h3><span class="material-symbols-outlined">menu_book</span> Rule</h3>
+                  <p id="lessonRule">
+                    Past Simple is used for actions completed at a specific time in the past.
+                    Present Perfect connects the past to the present and focuses on experience.
+                  </p>
+                  <div class="example-grid">
+                    <div class="example-box blue">
+                      <strong id="lessonExampleOneTitle">Past Simple</strong>
+                      <p id="lessonExampleOne">"I visited London in 2019."</p>
+                      <span id="lessonExampleOneHelper">Specific time mentioned.</span>
+                    </div>
+                    <div class="example-box green">
+                      <strong id="lessonExampleTwoTitle">Present Perfect</strong>
+                      <p id="lessonExampleTwo">"I have visited London three times."</p>
+                      <span id="lessonExampleTwoHelper">Focus on the experience.</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="card">
+                  <h3>Mini-Practice</h3>
+                  <p class="practice-prompt">"I _____ (see) that movie yesterday."</p>
+                  <div class="answer-row" id="answerRow">
+                    <button data-answer="Have seen">Have seen</button>
+                    <button data-answer="Saw">Saw</button>
+                    <button data-answer="Seeing">Seeing</button>
+                  </div>
+                  <p class="feedback" id="quizFeedback" aria-live="polite"></p>
+                </article>
+
+                <article class="card">
+                  <h3>Lesson Flow</h3>
+                  <p id="lessonFlowText">Finish this lesson to unlock the next recommended lesson automatically.</p>
+                  <div class="answer-row">
+                    <button id="completeLessonButton" type="button">Mark Lesson Complete</button>
+                    <button id="nextLessonButton" type="button">Start Next Lesson</button>
+                  </div>
+                </article>
+              </div>
+
+              <aside class="teacher-card">
+                <div class="teacher-header">
+                  <span class="material-symbols-outlined">psychology</span>
+                  <div>
+                    <strong>AI Teacher</strong>
+                    <p>Online when backend is running</p>
+                  </div>
+                </div>
+                <div class="chat-log compact-log">
+                  <p>Try saying what you did yesterday using Past Simple.</p>
+                  <p class="mine">I have went to the store yesterday.</p>
+                  <p>Great start. Use "I went" because yesterday is a specific time.</p>
+                </div>
+                <button class="primary-button" data-section="chat">Open Full Chat</button>
+              </aside>
+            </div>
+          </section>
+
+          <section class="view" id="chat" aria-labelledby="chat-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Conversation Practice</p>
+                <h2 id="chat-title">Real-Time Voice AI Chat</h2>
+              </div>
+              <div class="voice-status" id="voiceStatus">Voice ready</div>
+            </div>
+
+            <div class="chat-page">
+              <div class="chat-log" id="chatLog" aria-live="polite">
+                <p>Hi! I am your LingoFlow assistant. Type or speak a sentence and I will help with tense, clarity, and pronunciation.</p>
+              </div>
+              <div class="voice-toolbar">
+                <label class="select-field">
+                  Practice staff
+                  <select id="staffSelect">
+                    <option value="maya">Maya - Friendly Grammar Coach</option>
+                    <option value="arjun">Arjun - Interview Trainer</option>
+                    <option value="sophia">Sophia - Business English Mentor</option>
+                    <option value="david">David - Pronunciation Coach</option>
+                  </select>
+                </label>
+                <button class="secondary-button" id="voiceButton" type="button">
+                  <span class="material-symbols-outlined">mic</span>
+                  Start Listening
+                </button>
+                <button class="secondary-button" id="speakLastButton" type="button">
+                  <span class="material-symbols-outlined">volume_up</span>
+                  Speak Last Reply
+                </button>
+                <label class="voice-toggle">
+                  <input id="autoSpeakToggle" type="checkbox" checked />
+                  Auto speak replies
+                </label>
+              </div>
+              <form class="chat-form" id="chatForm">
+                <input
+                  id="chatInput"
+                  type="text"
+                  placeholder="Try: I have went to the store yesterday"
+                  autocomplete="off"
+                />
+                <button type="submit" class="primary-button">
+                  Send Live
+                  <span class="material-symbols-outlined">send</span>
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <section class="view" id="interview" aria-labelledby="interview-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Career Practice</p>
+                <h2 id="interview-title">Real-Time AI Interview</h2>
+              </div>
+              <div class="voice-status">Live coach</div>
+            </div>
+
+            <div class="lesson-layout">
+              <article class="chat-page">
+                <div class="chat-log" id="interviewLog" aria-live="polite">
+                  <p>Welcome. I will act as your interviewer, ask one question at a time, and coach your answer in clear English.</p>
+                </div>
+                <div class="voice-toolbar">
+                  <button class="primary-button" id="startInterviewButton" type="button">
+                    Start Interview
+                    <span class="material-symbols-outlined">play_arrow</span>
+                  </button>
+                  <button class="secondary-button" id="nextInterviewQuestion" type="button">
+                    Next Question
+                    <span class="material-symbols-outlined">skip_next</span>
+                  </button>
+                </div>
+                <form class="chat-form" id="interviewForm">
+                  <input
+                    id="interviewInput"
+                    type="text"
+                    placeholder="Answer the interview question here"
+                    autocomplete="off"
+                  />
+                  <button class="primary-button" type="submit">
+                    Submit Answer
+                    <span class="material-symbols-outlined">send</span>
+                  </button>
+                </form>
+              </article>
+
+              <aside class="teacher-card">
+                <div class="teacher-header">
+                  <span class="material-symbols-outlined">fact_check</span>
+                  <div>
+                    <strong>Interview Scorecard</strong>
+                    <p>Practice concise, confident answers</p>
+                  </div>
+                </div>
+                <div class="checklist-grid">
+                  <label><input type="checkbox" /> I answered with a clear example.</label>
+                  <label><input type="checkbox" /> I used past tense correctly.</label>
+                  <label><input type="checkbox" /> I explained my result or impact.</label>
+                  <label><input type="checkbox" /> I ended with confidence.</label>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="view" id="business" aria-labelledby="business-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Workplace English</p>
+                <h2 id="business-title">Real-Time Business Meeting</h2>
+              </div>
+              <div class="voice-status">Meeting room live</div>
+            </div>
+
+            <div class="lesson-layout">
+              <article class="chat-page">
+                <div class="chat-log" id="businessLog" aria-live="polite">
+                  <p>You are in a product planning meeting. Practice updates, polite disagreement, clarifying questions, and action items.</p>
+                </div>
+                <div class="voice-toolbar">
+                  <label class="select-field">
+                    Meeting staff
+                    <select id="meetingStaffSelect">
+                      <option value="sophia">Sophia - Project Manager</option>
+                      <option value="maya">Maya - Client Partner</option>
+                      <option value="arjun">Arjun - Team Lead</option>
+                    </select>
+                  </label>
+                  <button class="primary-button" id="startBusinessButton" type="button">
+                    Open Meeting
+                    <span class="material-symbols-outlined">play_arrow</span>
+                  </button>
+                  <button class="secondary-button" id="nextMeetingPrompt" type="button">
+                    Next Prompt
+                    <span class="material-symbols-outlined">skip_next</span>
+                  </button>
+                </div>
+                <form class="chat-form" id="businessForm">
+                  <input
+                    id="businessInput"
+                    type="text"
+                    placeholder="Type your meeting response"
+                    autocomplete="off"
+                  />
+                  <button class="primary-button" type="submit">
+                    Reply in Meeting
+                    <span class="material-symbols-outlined">send</span>
+                  </button>
+                </form>
+              </article>
+
+              <aside class="teacher-card">
+                <div class="teacher-header">
+                  <span class="material-symbols-outlined">corporate_fare</span>
+                  <div>
+                    <strong>Meeting Checklist</strong>
+                    <p>Use business-ready speaking patterns</p>
+                  </div>
+                </div>
+                <div class="plan-list">
+                  <div><span>1</span> Give a clear status update</div>
+                  <div><span>2</span> Ask one clarifying question</div>
+                  <div><span>3</span> Agree on an action item</div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="view" id="quiz" aria-labelledby="quiz-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Assessment</p>
+                <h2 id="quiz-title">Daily Quiz</h2>
+              </div>
+              <div class="progress-summary">
+                <span>8 quick checks</span>
+                <div class="progress-bar"><span id="quizProgress" style="width: 0%"></span></div>
+              </div>
+            </div>
+
+            <div class="quiz-stack" id="dailyQuiz">
+              <article class="card quiz-card" data-correct="went">
+                <p class="eyebrow">Question 1</p>
+                <h3>Choose the correct sentence.</h3>
+                <div class="answer-row">
+                  <button data-choice="have went">I have went yesterday.</button>
+                  <button data-choice="went">I went yesterday.</button>
+                  <button data-choice="going">I going yesterday.</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="experience">
+                <p class="eyebrow">Question 2</p>
+                <h3>Present Perfect usually focuses on...</h3>
+                <div class="answer-row">
+                  <button data-choice="specific">A specific finished time</button>
+                  <button data-choice="experience">Life experience or present result</button>
+                  <button data-choice="future">Only future plans</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="since">
+                <p class="eyebrow">Question 3</p>
+                <h3>Pick the best time word: "I have worked here ___ 2021."</h3>
+                <div class="answer-row">
+                  <button data-choice="ago">ago</button>
+                  <button data-choice="since">since</button>
+                  <button data-choice="yesterday">yesterday</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="could">
+                <p class="eyebrow">Question 4</p>
+                <h3>Choose the polite request.</h3>
+                <div class="answer-row">
+                  <button data-choice="give">Give me the report.</button>
+                  <button data-choice="could">Could you send me the report?</button>
+                  <button data-choice="must">You must send the report.</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="the">
+                <p class="eyebrow">Question 5</p>
+                <h3>Fill in: "She is ___ best speaker in the group."</h3>
+                <div class="answer-row">
+                  <button data-choice="a">a</button>
+                  <button data-choice="the">the</button>
+                  <button data-choice="an">an</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="who">
+                <p class="eyebrow">Question 6</p>
+                <h3>Pick the relative pronoun: "The mentor ___ helped me was patient."</h3>
+                <div class="answer-row">
+                  <button data-choice="who">who</button>
+                  <button data-choice="where">where</button>
+                  <button data-choice="when">when</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="better">
+                <p class="eyebrow">Question 7</p>
+                <h3>Choose the correct comparative: "My pronunciation is ___ than before."</h3>
+                <div class="answer-row">
+                  <button data-choice="gooder">gooder</button>
+                  <button data-choice="best">best</button>
+                  <button data-choice="better">better</button>
+                </div>
+              </article>
+              <article class="card quiz-card" data-correct="on">
+                <p class="eyebrow">Question 8</p>
+                <h3>Choose the preposition: "I depend ___ my practice routine."</h3>
+                <div class="answer-row">
+                  <button data-choice="in">in</button>
+                  <button data-choice="on">on</button>
+                  <button data-choice="at">at</button>
+                </div>
+              </article>
+              <p class="feedback" id="dailyQuizFeedback" aria-live="polite"></p>
+            </div>
+          </section>
+
+          <section class="view" id="quizDone" aria-labelledby="quiz-done-title">
+            <div class="hero-panel">
+              <div>
+                <p class="eyebrow hero-eyebrow">Session Complete</p>
+                <h2 id="quiz-done-title">Today's quiz is over</h2>
+                <p class="hero-copy" id="quizDoneSummary">Great work. Your answers are saved for this learning session.</p>
+              </div>
+              <div class="quote-box">
+                <p>Next, review your profile or choose a lesson for tomorrow's practice.</p>
+                <button class="primary-button" data-section="profile" type="button">Open Profile</button>
+                <button class="secondary-button" id="retakeQuizButton" type="button" style="margin-top:.5rem">New Quiz</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="vocabulary" aria-labelledby="vocabulary-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Word Bank</p>
+                <h2 id="vocabulary-title">Vocabulary Builder</h2>
+              </div>
+              <input class="search-field" id="vocabSearch" type="search" placeholder="Search words" />
+            </div>
+
+            <div class="vocab-grid" id="vocabGrid">
+              <article class="vocab-card" data-word="negotiate agreement compromise">
+                <strong>negotiate</strong>
+                <span>verb</span>
+                <p>To discuss terms and reach an agreement.</p>
+                <em>We need to negotiate the delivery date.</em>
+              </article>
+              <article class="vocab-card" data-word="clarify explain question">
+                <strong>clarify</strong>
+                <span>verb</span>
+                <p>To make something easier to understand.</p>
+                <em>Could you clarify the final requirement?</em>
+              </article>
+              <article class="vocab-card" data-word="deadline schedule time">
+                <strong>deadline</strong>
+                <span>noun</span>
+                <p>The latest time when work must be finished.</p>
+                <em>The deadline is Friday afternoon.</em>
+              </article>
+              <article class="vocab-card" data-word="confident fluent clear">
+                <strong>confident</strong>
+                <span>adjective</span>
+                <p>Feeling sure about your ability.</p>
+                <em>She sounded confident during the presentation.</em>
+              </article>
+              <article class="vocab-card" data-word="feedback advice correction">
+                <strong>feedback</strong>
+                <span>noun</span>
+                <p>Advice about how to improve performance.</p>
+                <em>The tutor gave useful feedback on pronunciation.</em>
+              </article>
+              <article class="vocab-card" data-word="improve progress develop">
+                <strong>improve</strong>
+                <span>verb</span>
+                <p>To become better at something.</p>
+                <em>Practice will improve your speaking rhythm.</em>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="speaking" aria-labelledby="speaking-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Practice Studio</p>
+                <h2 id="speaking-title">Practice Hub</h2>
+              </div>
+            </div>
+
+            <div class="practice-grid">
+              <article class="card practice-card">
+                <div class="practice-card-header">
+                  <span class="material-symbols-outlined">record_voice_over</span>
+                  <div>
+                    <h3>Read Aloud</h3>
+                    <p>Build confidence with clear pronunciation.</p>
+                  </div>
+                </div>
+                <p class="practice-text" id="readAloudText">
+                  “The city library offers free workshops for young learners every Saturday morning.”
+                </p>
+                <div class="practice-actions">
+                  <button class="secondary-button" id="readAloudButton" type="button">Read Aloud</button>
+                  <button class="text-button" id="stopReadAloudButton" type="button">Stop</button>
+                </div>
+              </article>
+
+              <article class="card practice-card">
+                <div class="practice-card-header">
+                  <span class="material-symbols-outlined">repeat</span>
+                  <div>
+                    <h3>Repeat Sentence</h3>
+                    <p>Copy the sentence and improve your rhythm.</p>
+                  </div>
+                </div>
+                <p class="practice-text">Please repeat: “I have been practicing every day this week.”</p>
+                <div class="practice-actions">
+                  <button class="secondary-button" id="repeatHearButton" type="button">Hear Sentence</button>
+                  <button class="secondary-button" id="repeatRecordButton" type="button">Record Repeat</button>
+                </div>
+                <p class="practice-note" id="repeatFeedback">Try to match the stress and pacing.</p>
+              </article>
+
+              <article class="card practice-card image-card">
+                <div class="practice-card-header">
+                  <span class="material-symbols-outlined">image</span>
+                  <div>
+                    <h3>Image Describe</h3>
+                    <p>Say what you see in a full sentence.</p>
+                  </div>
+                </div>
+                <div class="image-demo" aria-label="Sample scene preview">
+                  <div class="image-scene">🌳🏠☀️</div>
+                </div>
+                <p class="practice-text">Describe the scene in two or three sentences.</p>
+                <textarea id="imageDescriptionInput" placeholder="Type your description"></textarea>
+                <button class="secondary-button" id="imageDescribeButton" type="button">Speak My Description</button>
+                <p class="practice-note" id="imageDescriptionStatus">Tip: mention colors, actions, and the mood.</p>
+              </article>
+
+              <article class="card practice-card">
+                <div class="practice-card-header">
+                  <span class="material-symbols-outlined">campaign</span>
+                  <div>
+                    <h3>Retell Lecture</h3>
+                    <p>Summarize the idea in your own words.</p>
+                  </div>
+                </div>
+                <p class="practice-text" id="lectureContent">
+                  Lecture: A good study routine helps you remember new vocabulary better because short daily practice builds long-term confidence.
+                </p>
+                <textarea id="lectureRetellInput" placeholder="Retell the lecture in your own words"></textarea>
+                <div class="practice-actions">
+                  <button class="secondary-button" id="lectureSpeakButton" type="button">Speak Lecture</button>
+                  <button class="secondary-button" id="lectureSaveButton" type="button">Save Summary</button>
+                </div>
+                <p class="practice-note" id="lectureRetellStatus">Focus on the main idea and one supporting detail.</p>
+              </article>
+            </div>
+
+            <div class="practice-grid compact-grid">
+              <article class="card prompt-card">
+                <span class="material-symbols-outlined">timer</span>
+                <h3>Warm-up Timer</h3>
+                <p>Practice for one focused minute before you answer.</p>
+                <div class="timer" id="speakingTimer">00:30</div>
+                <button class="primary-button" id="timerButton" type="button">
+                  Start Practice
+                  <span class="material-symbols-outlined">play_arrow</span>
+                </button>
+              </article>
+
+              <article class="card">
+                <h3>Fluency Checklist</h3>
+                <div class="checklist-grid">
+                  <label><input type="checkbox" /> I used clear time markers.</label>
+                  <label><input type="checkbox" /> I spoke in complete sentences.</label>
+                  <label><input type="checkbox" /> I corrected one mistake myself.</label>
+                  <label><input type="checkbox" /> I paused naturally between ideas.</label>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="resources" aria-labelledby="resources-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Study Library</p>
+                <h2 id="resources-title">Resources</h2>
+              </div>
+            </div>
+
+            <div class="resource-grid">
+              <article class="resource-card">
+                <span class="material-symbols-outlined">description</span>
+                <h3>Grammar Cheat Sheet</h3>
+                <p>Fast rules for tenses, articles, prepositions, and modals.</p>
+                <button class="text-button">Open Guide</button>
+              </article>
+              <article class="resource-card">
+                <span class="material-symbols-outlined">mic</span>
+                <h3>Speaking Scripts</h3>
+                <p>Practice templates for interviews, meetings, and daily conversation.</p>
+                <button class="text-button">View Scripts</button>
+              </article>
+              <article class="resource-card">
+                <span class="material-symbols-outlined">volume_up</span>
+                <h3>Pronunciation Drills</h3>
+                <p>Minimal pairs, stress patterns, and rhythm exercises.</p>
+                <button class="text-button">Start Drills</button>
+              </article>
+              <article class="resource-card">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <h3>30-Day Plan</h3>
+                <p>A daily learning schedule for building speaking confidence.</p>
+                <button class="text-button">Open Plan</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="profile" aria-labelledby="profile-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Learner Profile</p>
+                <h2 id="profile-title">Progress Overview</h2>
+              </div>
+            </div>
+
+            <div class="content-grid">
+              <article class="card span-4 stat-card">
+                <span class="material-symbols-outlined">local_fire_department</span>
+                <strong id="statStreak">0</strong>
+                <p>Day streak</p>
+              </article>
+              <article class="card span-4 stat-card">
+                <span class="material-symbols-outlined">school</span>
+                <strong id="statLevel">B1</strong>
+                <p>Current level</p>
+              </article>
+              <article class="card span-4 stat-card">
+                <span class="material-symbols-outlined">task_alt</span>
+                <strong id="statUnits">0</strong>
+                <p>Units this week</p>
+              </article>
+              <article class="card span-12">
+                <h3>Learning Plan</h3>
+                <div class="plan-list">
+                  <div><span>1</span> <span id="profileCurrentLesson">Finish verb tense unit</span></div>
+                  <div><span>2</span> Practice a salary-review roleplay</div>
+                  <div><span>3</span> Submit one spoken journal response</div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="progress" aria-labelledby="progress-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Analytics</p>
+                <h2 id="progress-title">Learning Progress</h2>
+              </div>
+            </div>
+
+            <div class="content-grid">
+              <article class="card span-4 stat-card">
+                <span class="material-symbols-outlined">local_fire_department</span>
+                <strong id="statStreak2">0</strong>
+                <p>Day streak</p>
+              </article>
+              <article class="card span-4 stat-card">
+                <span class="material-symbols-outlined">chat</span>
+                <strong id="statConversations">0</strong>
+                <p>AI conversations</p>
+              </article>
+              <article class="card span-4 stat-card">
+                <span class="material-symbols-outlined">task_alt</span>
+                <strong id="statUnits2">0</strong>
+                <p>Units this week</p>
+              </article>
+              <article class="card span-12">
+                <h3>Weekly Skill Map</h3>
+                <div class="skill-list">
+                  <div><span>Grammar</span><div class="progress-bar"><span id="skillGrammar" style="width: 0%"></span></div></div>
+                  <div><span>Vocabulary</span><div class="progress-bar"><span id="skillVocab" style="width: 0%"></span></div></div>
+                  <div><span>Speaking</span><div class="progress-bar"><span id="skillSpeaking" style="width: 0%"></span></div></div>
+                  <div><span>Listening</span><div class="progress-bar"><span id="skillListening" style="width: 0%"></span></div></div>
+                </div>
+              </article>
+              <article class="card span-12">
+                <h3>Quiz History</h3>
+                <div id="quizHistory"><p style="opacity:.6;font-size:.9rem">No quiz attempts yet.</p></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="community" aria-labelledby="community-title">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Live Practice</p>
+                <h2 id="community-title">Community Rooms</h2>
+              </div>
+            </div>
+
+            <div class="resource-grid">
+              <article class="resource-card">
+                <span class="material-symbols-outlined">groups</span>
+                <h3>Interview Practice</h3>
+                <p>Roleplay common interview questions with other learners.</p>
+                <button class="text-button">Join Room</button>
+              </article>
+              <article class="resource-card">
+                <span class="material-symbols-outlined">business_center</span>
+                <h3>Business Meetings</h3>
+                <p>Practice updates, clarifying questions, and polite disagreement.</p>
+                <button class="text-button">Join Room</button>
+              </article>
+              <article class="resource-card">
+                <span class="material-symbols-outlined">travel_explore</span>
+                <h3>Daily Conversation</h3>
+                <p>Build confidence with travel, shopping, and friendly small talk.</p>
+                <button class="text-button">Join Room</button>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="active" data-section="dashboard">
+        <span class="material-symbols-outlined">home</span>
+        Home
+      </button>
+      <button data-section="topics">
+        <span class="material-symbols-outlined">menu_book</span>
+        Topics
+      </button>
+      <button data-section="lesson">
+        <span class="material-symbols-outlined">history_edu</span>
+        Lesson
+      </button>
+      <button data-section="chat">
+        <span class="material-symbols-outlined">forum</span>
+        Voice
+      </button>
+      <button data-section="quiz">
+        <span class="material-symbols-outlined">quiz</span>
+        Quiz
+      </button>
+    </nav>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

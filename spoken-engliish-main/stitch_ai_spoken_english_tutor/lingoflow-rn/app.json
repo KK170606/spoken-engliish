@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "LingoFlow",
+    "slug": "lingoflow-rn",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#f8f9ff"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

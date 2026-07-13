@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LingoFlow - Interactive Grammar Lesson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mic-active-pulse {
+            animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(.8); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky bg-surface shadow-sm z-50">
+<div class="flex items-center justify-between px-container-padding h-16 w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full active:scale-95 duration-150">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">LingoFlow</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg font-label-md" href="#">Dashboard</a>
+<a class="text-primary font-bold px-3 py-2 rounded-lg font-label-md" href="#">Grammar Topics</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg font-label-md" href="#">Live Chat</a>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A clean, professional headshot of a young professional learner with a friendly smile, set against a blurred academic background with soft natural lighting. The image maintains a high-key, modern aesthetic with soft shadows, aligning with the professional and encouraging LingoFlow brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD30hXXJILZZx-bUU3fGI4fFkbYuvoZ1njYSOKvWzksrFbgVk7J03X2hS_XOfHQC_hAtBt-kUEuver_ko4qzUut67cXbK8cZcpp9a6hdGwGr3LvSDJzwUBXfLnph6v04OljcQqf0ATOJlbeDPrUyFvml7Stf8cxF8U52zcg2JGxDKfezj_eS2-Y0EcUabPNXIi4dtlaq2KHS1bY_PmB1JtBMRpf16Ra1ekLs64BV__JTUn7JyDveoGid3S5uvUG7tXo8evydy6P0Y"/>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="max-w-[1200px] mx-auto px-container-padding pt-6 pb-24 md:grid md:grid-cols-12 md:gap-8">
+<!-- Left Column: Lesson Content (8 Cols) -->
+<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-stack-gap-lg">
+<!-- Growth Track / Progress -->
+<div class="w-full flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-label-sm text-secondary uppercase tracking-wider">Unit 4: Verb Tenses</span>
+<span class="font-label-sm text-on-surface-variant">65% Completed</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim transition-all duration-700 ease-out" style="width: 65%"></div>
+</div>
+</div>
+<!-- Topic Explanation Section -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex flex-col gap-4">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined">menu_book</span>
+<h2 class="font-headline-lg text-headline-lg">Past Simple vs. Present Perfect</h2>
+</div>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                    The <strong class="text-on-surface">Past Simple</strong> is used for actions completed at a specific time in the past. The <strong class="text-on-surface">Present Perfect</strong> connects the past to the present, focusing on the experience rather than the specific time.
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<div class="p-4 bg-primary-container/10 border-l-4 border-primary rounded-r-lg">
+<span class="font-label-md text-primary block mb-1">Past Simple</span>
+<p class="text-body-md italic text-on-surface-variant">"I visited London in 2019."</p>
+<span class="text-[12px] text-primary/70">Specific time mentioned.</span>
+</div>
+<div class="p-4 bg-secondary-container/10 border-l-4 border-secondary rounded-r-lg">
+<span class="font-label-md text-secondary block mb-1">Present Perfect</span>
+<p class="text-body-md italic text-on-surface-variant">"I have visited London three times."</p>
+<span class="text-[12px] text-secondary/70">Focus on the experience.</span>
+</div>
+</div>
+</section>
+<!-- Example Sentences / Interactive Cards -->
+<section class="flex flex-col gap-4">
+<h3 class="font-label-md text-on-surface-variant">Common Examples</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">volume_up</span>
+</div>
+<p class="text-body-md font-medium">She finished her homework an hour ago.</p>
+<p class="text-label-sm text-outline mt-1">Past Simple: Finished (Completed Action)</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">volume_up</span>
+</div>
+<p class="text-body-md font-medium">Have you ever eaten Japanese food?</p>
+<p class="text-label-sm text-outline mt-1">Present Perfect: Life Experience</p>
+</div>
+</div>
+</section>
+<!-- Practice Section (Bento Style) -->
+<section class="flex flex-col gap-4">
+<h3 class="font-label-md text-on-surface-variant">Mini-Practice</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 bg-surface-container-low p-6 rounded-2xl flex flex-col gap-4">
+<p class="text-body-md">Choose the correct form:</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">"I _____ (see) that movie yesterday."</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-surface-container-lowest hover:bg-primary hover:text-on-primary border border-outline-variant px-6 py-2 rounded-full transition-all text-label-md active:scale-95">Have seen</button>
+<button class="bg-surface-container-lowest hover:bg-primary hover:text-on-primary border border-outline-variant px-6 py-2 rounded-full transition-all text-label-md active:scale-95">Saw</button>
+<button class="bg-surface-container-lowest hover:bg-primary hover:text-on-primary border border-outline-variant px-6 py-2 rounded-full transition-all text-label-md active:scale-95">Seeing</button>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-6 rounded-2xl flex flex-col justify-between items-center text-center">
+<span class="material-symbols-outlined text-[48px]">lightbulb</span>
+<div>
+<p class="font-label-md mb-2">Tip</p>
+<p class="text-label-sm opacity-90 leading-tight">Look for time markers like 'yesterday', 'last week', or 'ago' for Past Simple.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<div class="mt-4 flex justify-center">
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-xl font-headline-lg-mobile shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-[0.98]">
+                    Take Quiz
+                </button>
+</div>
+</div>
+<!-- Right Column: AI Teacher Chat (4 Cols) -->
+<aside class="hidden md:flex md:col-span-5 lg:col-span-4 sticky top-24 flex-col h-[calc(100vh-120px)] bg-surface-container-lowest rounded-2xl shadow-md border border-outline-variant/20 overflow-hidden">
+<!-- Chat Header -->
+<div class="p-4 border-b border-outline-variant/20 flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">psychology</span>
+</div>
+<div>
+<p class="font-label-md">AI Teacher</p>
+<span class="text-[10px] text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full animate-pulse"></span>
+                            Online &amp; Listening
+                        </span>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant p-1">more_vert</button>
+</div>
+<!-- Chat Content -->
+<div class="flex-1 overflow-y-auto p-4 flex flex-col gap-4" id="chat-messages">
+<!-- Message 1 -->
+<div class="flex flex-col gap-1 max-w-[85%]">
+<div class="bg-surface-container text-on-surface p-3 rounded-2xl rounded-tl-none font-body-md text-[14px]">
+                        Hi! I'm your LingoFlow AI assistant. Try saying a sentence about what you did yesterday using the Past Simple!
+                    </div>
+<span class="text-[10px] text-outline self-start">Just now</span>
+</div>
+<!-- Message 2 (User Correction Example) -->
+<div class="flex flex-col gap-1 max-w-[85%] self-end">
+<div class="bg-primary text-on-primary p-3 rounded-2xl rounded-tr-none font-body-md text-[14px]">
+                        "I have went to the store yesterday."
+                    </div>
+</div>
+<!-- Message 3 (AI Correction) -->
+<div class="flex flex-col gap-1 max-w-[85%]">
+<div class="bg-surface-container text-on-surface p-3 rounded-2xl rounded-tl-none font-body-md text-[14px]">
+<p class="mb-2">Great start! But let's fix that:</p>
+<div class="bg-error-container/30 p-2 rounded-lg border border-error/20 mb-1">
+<p class="text-error font-medium line-through">I have went yesterday</p>
+</div>
+<div class="bg-secondary-container/30 p-2 rounded-lg border border-secondary/20">
+<p class="text-secondary font-bold">I went yesterday</p>
+</div>
+<p class="mt-2 text-[12px] italic text-on-surface-variant">Why? Because "yesterday" is a specific time, so we use the Past Simple "went" instead of Present Perfect.</p>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Type or ask a question..." type="text"/>
+</div>
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center relative transition-transform active:scale-90 group" id="mic-btn">
+<div class="absolute inset-0 rounded-full mic-active-pulse hidden" id="mic-pulse"></div>
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+</aside>
+</main>
+<!-- Mobile Bottom Navigation (Visible only on mobile) -->
+<nav class="fixed bottom-0 left-0 right-0 h-16 flex justify-around items-center px-4 bg-surface md:hidden z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform active:scale-110" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-transform active:scale-110" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform active:scale-110" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-sm text-label-sm">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform active:scale-110" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button for Mobile Chat -->
+<button class="md:hidden fixed bottom-20 right-4 w-14 h-14 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-[32px]">forum</span>
+</button>
+<script>
+        // Micro-interaction for the Mic button
+        const micBtn = document.getElementById('mic-btn');
+        const micPulse = document.getElementById('mic-pulse');
+        const micIcon = micBtn.querySelector('.material-symbols-outlined');
+        let isRecording = false;
+
+        micBtn.addEventListener('click', () => {
+            isRecording = !isRecording;
+            if (isRecording) {
+                micPulse.classList.remove('hidden');
+                micIcon.innerText = 'graphic_eq';
+                micBtn.classList.add('bg-secondary');
+                micBtn.classList.remove('bg-primary');
+            } else {
+                micPulse.classList.add('hidden');
+                micIcon.innerText = 'mic';
+                micBtn.classList.remove('bg-secondary');
+                micBtn.classList.add('bg-primary');
+            }
+        });
+
+        // Simple scroll to chat reveal for mobile (if triggered by a hypothetical button)
+        function toggleMobileChat() {
+            // In a real app, this would open a full-screen drawer or modal
+            alert("In a mobile view, this would open the AI Teacher fullscreen interface.");
+        }
+    </script>
+</body></html>
