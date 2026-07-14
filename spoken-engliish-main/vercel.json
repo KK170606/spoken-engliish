@@ -1,3 +1,4 @@
 {
-  "root": "stitch_ai_spoken_english_tutor/full-website"
+  "buildCommand": "echo 'Static files'",
+  "outputDirectory": "stitch_ai_spoken_english_tutor/full-website"
 }
