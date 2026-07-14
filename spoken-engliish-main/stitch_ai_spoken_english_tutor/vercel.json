@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --prefix backend",
+  "buildCommand": "echo 'Static site build'",
+  "outputDirectory": "full-website",
+  "public": true,
+  "functions": {
+    "api/[...path].js": {
+      "includeFiles": "backend/**"
+    }
+  }
+}
