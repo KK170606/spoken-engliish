@@ -3,18 +3,28 @@ const fs = require("fs");
 const path = require("path");
 const admin = require("firebase-admin");
 const Groq = require("groq-sdk");
-const { onRequest } = require("firebase-functions/v2/https");
 
 if (!admin.apps.length) {
   const serviceAccountPath = path.join(__dirname, "serviceAccountKey.json");
-  admin.initializeApp(
-    fs.existsSync(serviceAccountPath)
-      ? {
-          credential: admin.credential.cert(require(serviceAccountPath)),
-          projectId: "spoken-english-4f507"
-        }
-      : { projectId: "spoken-english-4f507" }
-  );
+  const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT_JSON
+    ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON)
+    : fs.existsSync(serviceAccountPath)
+      ? require(serviceAccountPath)
+      : null;
+
+  try {
+    admin.initializeApp(
+      serviceAccount
+        ? {
+            credential: admin.credential.cert(serviceAccount),
+            projectId: "spoken-english-4f507"
+          }
+        : { projectId: "spoken-english-4f507" }
+    );
+  } catch (error) {
+    console.warn("Firebase Admin credential is unavailable:", error.message);
+    admin.initializeApp({ projectId: "spoken-english-4f507" });
+  }
 }
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || "REPLACE_WITH_GROQ_API_KEY" });
@@ -589,13 +599,10 @@ const handleRequest = async (req, res) => {
   }
 };
 
-exports.api = onRequest(
-  { region: "us-central1", secrets: ["GROQ_API_KEY"] },
-  handleRequest
-);
-
 if (require.main === module) {
   http.createServer(handleRequest).listen(PORT, "127.0.0.1", () => {
     console.log(`LingoFlow API running at http://127.0.0.1:${PORT}`);
   });
 }
+
+module.exports = { handleRequest };

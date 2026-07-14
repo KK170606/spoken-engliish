@@ -2,6 +2,7 @@
   "name": "lingoflow-backend",
   "version": "1.0.0",
   "private": true,
+  "main": "firebase.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
