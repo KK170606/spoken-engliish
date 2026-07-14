@@ -3,11 +3,19 @@ const fs = require("fs");
 const path = require("path");
 const admin = require("firebase-admin");
 const Groq = require("groq-sdk");
+const { onRequest } = require("firebase-functions/v2/https");
 
-admin.initializeApp({
-  credential: admin.credential.cert(require("./serviceAccountKey.json")),
-  projectId: "spoken-english-4f507"
-});
+if (!admin.apps.length) {
+  const serviceAccountPath = path.join(__dirname, "serviceAccountKey.json");
+  admin.initializeApp(
+    fs.existsSync(serviceAccountPath)
+      ? {
+          credential: admin.credential.cert(require(serviceAccountPath)),
+          projectId: "spoken-english-4f507"
+        }
+      : { projectId: "spoken-english-4f507" }
+  );
+}
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || "REPLACE_WITH_GROQ_API_KEY" });
 
@@ -415,7 +423,7 @@ function streamText(res, text) {
   res.on("close", () => clearInterval(timer));
 }
 
-const server = http.createServer(async (req, res) => {
+const handleRequest = async (req, res) => {
   const url = new URL(req.url || "/", `http://${req.headers.host}`);
 
   if (req.method === "OPTIONS") {
@@ -579,8 +587,15 @@ const server = http.createServer(async (req, res) => {
   } catch (error) {
     return sendJson(res, 500, { error: error.message || "Internal server error" });
   }
-});
+};
 
-server.listen(PORT, "127.0.0.1", () => {
-  console.log(`LingoFlow API running at http://127.0.0.1:${PORT}`);
-});
+exports.api = onRequest(
+  { region: "us-central1", secrets: ["GROQ_API_KEY"] },
+  handleRequest
+);
+
+if (require.main === module) {
+  http.createServer(handleRequest).listen(PORT, "127.0.0.1", () => {
+    console.log(`LingoFlow API running at http://127.0.0.1:${PORT}`);
+  });
+}
