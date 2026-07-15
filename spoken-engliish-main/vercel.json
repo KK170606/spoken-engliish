@@ -1,4 +1,4 @@
 {
-  "root": "spoken-engliish-main/stitch_ai_spoken_english_tutor/full-website",
-  "buildCommand": ""
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "spoken-engliish-main/stitch_ai_spoken_english_tutor/full-website"
 }
