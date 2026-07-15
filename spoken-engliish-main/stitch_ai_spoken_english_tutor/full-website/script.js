@@ -97,6 +97,77 @@ function emptyProgress() {
 
 function getProgress() { return liveProgress || emptyProgress(); }
 
+function profileInitial(name) {
+  return (String(name || "Learner").trim().charAt(0) || "L").toUpperCase();
+}
+
+function renderProfileAvatar(name) {
+  const image = document.querySelector("#profileAvatarImage");
+  const initial = document.querySelector("#profileAvatarInitial");
+  if (!image || !initial) return;
+  const photoURL = liveProfile?.photoURL || auth.currentUser?.photoURL || "";
+  initial.textContent = profileInitial(name);
+  image.hidden = !photoURL;
+  if (photoURL) image.src = photoURL;
+}
+
+function compressProfilePhoto(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error("Could not read that image."));
+    reader.onload = () => {
+      const image = new Image();
+      image.onerror = () => reject(new Error("Please choose a valid image file."));
+      image.onload = () => {
+        const maxSize = 320;
+        const scale = Math.min(1, maxSize / Math.max(image.width, image.height));
+        const width = Math.max(1, Math.round(image.width * scale));
+        const height = Math.max(1, Math.round(image.height * scale));
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0, width, height);
+        resolve(canvas.toDataURL("image/jpeg", 0.82));
+      };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function initProfilePhoto() {
+  const picker = document.querySelector("#avatarPicker");
+  const input = document.querySelector("#profilePhotoInput");
+  const upload = document.querySelector("#profilePhotoUpload");
+  const remove = document.querySelector("#profilePhotoRemove");
+  if (!picker || !input || !upload || !remove) return;
+
+  const openPicker = () => input.click();
+  picker.addEventListener("click", openPicker);
+  upload.addEventListener("click", openPicker);
+  input.addEventListener("change", async () => {
+    const file = input.files?.[0];
+    input.value = "";
+    if (!file) return;
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type) || file.size > 5 * 1024 * 1024) {
+      alert("Choose a JPG, PNG, or WebP image smaller than 5 MB.");
+      return;
+    }
+    try {
+      const photoURL = await compressProfilePhoto(file);
+      if (photoURL.length > 850000) throw new Error("That photo is still too large. Please choose another image.");
+      await setDoc(doc(db, "users", auth.currentUser.uid), { photoURL, updatedAt: new Date().toISOString() }, { merge: true });
+      await updateProfile(auth.currentUser, { photoURL });
+    } catch (error) {
+      alert(error.message || "Could not save your profile photo.");
+    }
+  });
+  remove.addEventListener("click", async () => {
+    await setDoc(doc(db, "users", auth.currentUser.uid), { photoURL: "", updatedAt: new Date().toISOString() }, { merge: true });
+    await updateProfile(auth.currentUser, { photoURL: "" });
+  });
+}
+
 async function saveProgress(updates, quizEntry = null) {
   const user = auth.currentUser;
   if (!user) return;
@@ -140,6 +211,7 @@ function applyUi() {
   set("#dashboard-title", `Welcome back, ${name}!`);
   set("#profileName", name);
   set("#profileLevel", level);
+  renderProfileAvatar(name);
 
   // sidebar profile
   const sidebarH2 = document.querySelector(".profile-block h2");
@@ -376,6 +448,7 @@ function initDashboard() {
   initVocabularySearch();
   initSpeakingTimer();
   initPracticeHub();
+  initProfilePhoto();
   initChat();
   initInterview();
   initBusinessMeeting();

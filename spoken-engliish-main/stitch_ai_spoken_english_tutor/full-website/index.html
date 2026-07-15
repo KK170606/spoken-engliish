@@ -20,11 +20,12 @@
             <span class="material-symbols-outlined">school</span>
             <strong>LingoFlow</strong>
           </div>
-          <img
-            class="profile-avatar"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcq_oA8AOQgfSMNYepdl2eG-0j8S6eQwfpSjBdYMrWT7FtRYZFDEF49giWQJ0gKk-tYbLRh02dqS7ng-t6GuL5FjxVferP7sZXn9Slogz8L00jElinftefI_vTUzmMtOUvKfqN2LMcRsGtMwA4Eaajm8rWAewVRFqv4jPLCQHKpL9R4jiKcwwfAPaaDgPrM7n6oRtO-26HtJxSeU9zzd40MtVo4wKKVsvJHUbK806N0GGQKlOOlFgUcAmpAguVcefGd0_Uv7QzoPE"
-            alt="Academic learner avatar"
-          />
+          <button class="profile-avatar" id="avatarPicker" type="button" aria-label="Change profile photo" title="Change profile photo">
+            <img id="profileAvatarImage" alt="" hidden />
+            <span id="profileAvatarInitial" aria-hidden="true">L</span>
+            <span class="avatar-edit-icon material-symbols-outlined" aria-hidden="true">photo_camera</span>
+          </button>
+          <input id="profilePhotoInput" type="file" accept="image/png,image/jpeg,image/webp" hidden />
           <h2 id="profileName">Learner</h2>
           <p id="profileLevel">B1 Intermediate</p>
           <span class="streak-pill">0 day streak</span>
@@ -829,6 +830,17 @@
             </div>
 
             <div class="content-grid">
+              <article class="card span-12 profile-photo-card">
+                <div>
+                  <p class="eyebrow">Profile photo</p>
+                  <h3>Make your learning space yours</h3>
+                  <p>Upload a JPG, PNG, or WebP photo. If you do not add one, your initials are shown instead.</p>
+                </div>
+                <div class="profile-photo-actions">
+                  <button class="primary-button" id="profilePhotoUpload" type="button">Upload photo</button>
+                  <button class="secondary-button" id="profilePhotoRemove" type="button">Use initials</button>
+                </div>
+              </article>
               <article class="card span-4 stat-card">
                 <span class="material-symbols-outlined">local_fire_department</span>
                 <strong id="statStreak">0</strong>
