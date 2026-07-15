@@ -825,11 +825,49 @@
             <div class="section-header">
               <div>
                 <p class="eyebrow">Learner Profile</p>
-                <h2 id="profile-title">Progress Overview</h2>
+                <h2 id="profile-title">Your Profile</h2>
               </div>
             </div>
 
             <div class="content-grid">
+              <article class="card span-12 profile-settings-card">
+                <div class="card-heading">
+                  <div>
+                    <p class="eyebrow">Account settings</p>
+                    <h3>Personalize your learning plan</h3>
+                  </div>
+                  <span class="material-symbols-outlined profile-settings-icon" aria-hidden="true">manage_accounts</span>
+                </div>
+                <form id="profileSettingsForm" class="profile-settings-form">
+                  <label>
+                    Display name
+                    <input id="profileNameInput" type="text" maxlength="60" autocomplete="name" required />
+                  </label>
+                  <label>
+                    Email address
+                    <input id="profileEmailInput" type="email" readonly aria-readonly="true" />
+                  </label>
+                  <label>
+                    English level
+                    <select id="profileLevelInput">
+                      <option>A1 Beginner</option>
+                      <option>A2 Elementary</option>
+                      <option>B1 Intermediate</option>
+                      <option>B2 Upper Intermediate</option>
+                      <option>C1 Advanced</option>
+                      <option>C2 Proficient</option>
+                    </select>
+                  </label>
+                  <label>
+                    Daily practice goal (minutes)
+                    <input id="profileDailyGoalInput" type="number" min="5" max="180" step="5" />
+                  </label>
+                  <div class="profile-save-row">
+                    <button class="primary-button" type="submit">Save profile</button>
+                    <p id="profileSettingsStatus" role="status" aria-live="polite"></p>
+                  </div>
+                </form>
+              </article>
               <article class="card span-12 profile-photo-card">
                 <div>
                   <p class="eyebrow">Profile photo</p>

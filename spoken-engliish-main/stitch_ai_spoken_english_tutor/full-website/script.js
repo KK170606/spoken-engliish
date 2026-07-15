@@ -168,6 +168,43 @@ function initProfilePhoto() {
   });
 }
 
+function initProfileSettings() {
+  const form = document.querySelector("#profileSettingsForm");
+  const status = document.querySelector("#profileSettingsStatus");
+  if (!form || !status) return;
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    const name = document.querySelector("#profileNameInput").value.trim();
+    const level = document.querySelector("#profileLevelInput").value;
+    const dailyGoal = Number(document.querySelector("#profileDailyGoalInput").value);
+    if (!name) {
+      status.textContent = "Enter your name to continue.";
+      return;
+    }
+    if (!Number.isFinite(dailyGoal) || dailyGoal < 5 || dailyGoal > 180) {
+      status.textContent = "Choose a daily goal between 5 and 180 minutes.";
+      return;
+    }
+    const submit = form.querySelector("button[type=submit]");
+    submit.disabled = true;
+    status.textContent = "Saving…";
+    try {
+      await setDoc(doc(db, "users", auth.currentUser.uid), {
+        name,
+        level,
+        dailyGoal,
+        updatedAt: new Date().toISOString()
+      }, { merge: true });
+      await updateProfile(auth.currentUser, { displayName: name });
+      status.textContent = "Profile saved.";
+    } catch (error) {
+      status.textContent = error.message || "Could not save your profile.";
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+
 async function saveProgress(updates, quizEntry = null) {
   const user = auth.currentUser;
   if (!user) return;
@@ -212,6 +249,14 @@ function applyUi() {
   set("#profileName", name);
   set("#profileLevel", level);
   renderProfileAvatar(name);
+  const profileNameInput = document.querySelector("#profileNameInput");
+  const profileEmailInput = document.querySelector("#profileEmailInput");
+  const profileLevelInput = document.querySelector("#profileLevelInput");
+  const profileDailyGoalInput = document.querySelector("#profileDailyGoalInput");
+  if (profileNameInput && document.activeElement !== profileNameInput) profileNameInput.value = name;
+  if (profileEmailInput) profileEmailInput.value = liveProfile?.email || auth.currentUser?.email || "";
+  if (profileLevelInput && document.activeElement !== profileLevelInput) profileLevelInput.value = level;
+  if (profileDailyGoalInput && document.activeElement !== profileDailyGoalInput) profileDailyGoalInput.value = liveProfile?.dailyGoal || 15;
 
   // sidebar profile
   const sidebarH2 = document.querySelector(".profile-block h2");
@@ -294,6 +339,7 @@ async function ensureProfile(user, name = "") {
       level: "B1 Intermediate",
       streak: 1,
       weeklyUnits: 0,
+      dailyGoal: 15,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       progress: emptyProgress()
@@ -449,6 +495,7 @@ function initDashboard() {
   initSpeakingTimer();
   initPracticeHub();
   initProfilePhoto();
+  initProfileSettings();
   initChat();
   initInterview();
   initBusinessMeeting();

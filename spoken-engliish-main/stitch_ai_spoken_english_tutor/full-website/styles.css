@@ -283,6 +283,60 @@ button:disabled {
   flex-shrink: 0;
 }
 
+.profile-settings-card .card-heading {
+  margin-bottom: 18px;
+}
+
+.profile-settings-icon {
+  color: var(--primary);
+  font-size: 32px;
+}
+
+.profile-settings-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.profile-settings-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.profile-settings-form input,
+.profile-settings-form select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--outline);
+  border-radius: 10px;
+  padding: 0 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.profile-settings-form input[readonly] {
+  background: var(--secondary-soft);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.profile-save-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-save-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .profile-block h2,
 .profile-block p {
   margin: 0;
@@ -1367,6 +1421,10 @@ body.login-page main.login-view {
   .profile-photo-card {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .profile-settings-form {
+    grid-template-columns: 1fr;
   }
 
   .span-4,
