@@ -5,7 +5,7 @@
   "outputDirectory": "spoken-engliish-main/stitch_ai_spoken_english_tutor/full-website",
   "public": true,
   "functions": {
-    "spoken-engliish-main/stitch_ai_spoken_english_tutor/api/[...path].js": {
+    "api/[...path].js": {
       "includeFiles": "spoken-engliish-main/stitch_ai_spoken_english_tutor/backend/**"
     }
   }
