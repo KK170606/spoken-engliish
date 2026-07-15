@@ -1,4 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "spoken-engliish-main/stitch_ai_spoken_english_tutor/full-website"
+  "installCommand": "npm install --prefix stitch_ai_spoken_english_tutor/backend",
+  "buildCommand": "echo 'Static site build'",
+  "outputDirectory": "stitch_ai_spoken_english_tutor/full-website",
+  "public": true,
+  "functions": {
+    "stitch_ai_spoken_english_tutor/api/[...path].js": {
+      "includeFiles": "stitch_ai_spoken_english_tutor/backend/**"
+    }
+  }
 }
