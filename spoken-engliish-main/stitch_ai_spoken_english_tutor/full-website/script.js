@@ -16,13 +16,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "REPLACE_WITH_FIREBASE_API_KEY",
+  apiKey: "AIzaSyC8zQGohjdhtsYp5m7csc3hGrC7BcmgxUE",
   authDomain: "spoken-english-4f507.firebaseapp.com",
   projectId: "spoken-english-4f507",
   storageBucket: "spoken-english-4f507.firebasestorage.app",
-  messagingSenderId: "REPLACE_WITH_SENDER_ID",
-  appId: "REPLACE_WITH_APP_ID",
-  measurementId: "REPLACE_WITH_MEASUREMENT_ID"
+  messagingSenderId: "864828597512",
+  appId: "1:864828597512:web:24e7446a8fc90e61ce78bd",
+  measurementId: "G-51N82JS09V"
 };
 
 const app = initializeApp(firebaseConfig);
