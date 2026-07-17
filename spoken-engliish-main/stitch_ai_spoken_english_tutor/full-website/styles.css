@@ -1383,8 +1383,7 @@ body.login-page main.login-view {
     display: none;
   }
 
-  .user-chip,
-  #logoutButton {
+  .user-chip {
     display: none;
   }
 

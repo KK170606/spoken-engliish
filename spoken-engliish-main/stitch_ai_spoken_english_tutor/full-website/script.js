@@ -454,7 +454,7 @@ function initDashboard() {
     views.forEach(v => v.classList.toggle("active", v.id === id));
     document.querySelectorAll(".nav-link").forEach(b => b.classList.toggle("active", b.dataset.section === id));
     document.querySelectorAll(".mobile-nav button").forEach(b => b.classList.toggle("active", b.dataset.section === id));
-    pageTitle.textContent = sectionTitles[id] || "LingoFlow";
+    pageTitle.textContent = sectionTitles[id] || "Spoken English";
     sidebar.classList.remove("open");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

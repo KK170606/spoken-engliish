@@ -15,7 +15,7 @@ import {
 type Screen = "dashboard" | "grammar" | "lesson";
 type IconName = keyof typeof Ionicons.glyphMap;
 
-const API_BASE_URL = "http://127.0.0.1:4000";
+const API_BASE_URL = "https://spoken-engliish-main.vercel.app";
 
 const colors = {
   background: "#f8f9ff",
