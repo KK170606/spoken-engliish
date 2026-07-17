@@ -46,7 +46,9 @@ button:disabled {
 
 .login-page {
   display: grid;
+  place-items: center;
   min-height: 100vh;
+  padding: 24px;
   background:
     linear-gradient(120deg, rgba(37, 99, 235, 0.12), transparent 42%),
     linear-gradient(300deg, rgba(0, 108, 73, 0.13), transparent 45%),
@@ -55,22 +57,18 @@ button:disabled {
 
 .login-view {
   display: grid;
-  grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+  grid-template-columns: minmax(320px, 430px);
   gap: 22px;
-  width: min(1080px, calc(100% - 32px));
-  margin: auto;
+  width: min(430px, calc(100% - 32px));
+  margin: 0;
   padding: 0;
 }
 
-.login-panel,
-.login-preview {
+.login-panel {
   border: 1px solid rgba(195, 198, 215, 0.78);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
-}
-
-.login-panel {
   display: grid;
   gap: 18px;
   padding: 30px;
@@ -86,14 +84,8 @@ button:disabled {
 
 .login-panel h1 {
   margin: 0;
-  font-size: clamp(32px, 5vw, 48px);
-  line-height: 1.06;
-}
-
-.login-copy {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.1;
 }
 
 .login-form {
@@ -127,61 +119,6 @@ button:disabled {
   margin: 0;
   color: var(--danger);
   font-weight: 800;
-}
-
-.demo-note {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 12px;
-  padding: 12px;
-  background: var(--surface-low);
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.login-preview {
-  display: grid;
-  align-content: center;
-  gap: 14px;
-  padding: 30px;
-}
-
-.login-preview div {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 4px 14px;
-  align-items: center;
-  border-radius: 14px;
-  padding: 16px;
-  background: var(--surface-low);
-}
-
-.login-preview .material-symbols-outlined {
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: var(--primary);
-  color: #fff;
-}
-
-.login-preview strong {
-  font-size: 18px;
-}
-
-.login-preview p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.login-preview a {
-  color: var(--primary-dark);
-  font-weight: 900;
 }
 
 .app-shell {
