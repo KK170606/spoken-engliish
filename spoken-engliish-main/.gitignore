@@ -1,2 +1,5 @@
 node_modules
 stitch_ai_spoken_english_tutor/backend/serviceAccountKey.json
+
+.vercel
+.env*

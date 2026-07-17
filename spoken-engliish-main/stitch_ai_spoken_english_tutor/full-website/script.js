@@ -29,7 +29,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const API_BASE_URL = window.location.origin;
+const API_BASE_URL = window.LINGOFLOW_API_BASE_URL || window.location.origin;
 
 const lessons = [
   {

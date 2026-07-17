@@ -391,7 +391,15 @@ function buildBusinessMeetingReply(message) {
 }
 
 async function getAuthUser(req) {
+  // Vercel function mount paths can shift; this API router also supports a no-prefix health route.
+  // Set to a constant to avoid noisy logs while debugging locally.
+  const _debug = {
+    pathname: new URL(req.url || "/", `http://${req.headers.host}`).pathname,
+    method: req.method
+  };
+
   const auth = req.headers.authorization || "";
+
   const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
   if (!token) return null;
   try {

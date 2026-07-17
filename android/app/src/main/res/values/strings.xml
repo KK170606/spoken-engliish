@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LingoFlow</string>
+    <string name="title_activity_main">LingoFlow</string>
+    <string name="package_name">com.lingoflow.spokenenglish</string>
+    <string name="custom_url_scheme">com.lingoflow.spokenenglish</string>
+</resources>

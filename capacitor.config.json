@@ -1,0 +1,8 @@
+{
+  "appId": "com.lingoflow.spokenenglish",
+  "appName": "LingoFlow",
+  "webDir": "spoken-engliish-main/stitch_ai_spoken_english_tutor/full-website",
+  "server": {
+    "androidScheme": "https"
+  }
+}

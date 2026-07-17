@@ -3,7 +3,10 @@ node_modules/
 .expo/
 dist/
 build/
-android/
+# Keep the Capacitor Android project in Git. Expo-generated Android folders
+# remain local build output.
+spoken-engliish-main/spokenApp/android/
+spoken-engliish-main/stitch_ai_spoken_english_tutor/lingoflow-rn/android/
 ios/
 *.log
 .vercel
