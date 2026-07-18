@@ -454,7 +454,7 @@ function initDashboard() {
     views.forEach(v => v.classList.toggle("active", v.id === id));
     document.querySelectorAll(".nav-link").forEach(b => b.classList.toggle("active", b.dataset.section === id));
     document.querySelectorAll(".mobile-nav button").forEach(b => b.classList.toggle("active", b.dataset.section === id));
-    pageTitle.textContent = sectionTitles[id] || "Spoken English";
+    pageTitle.textContent = sectionTitles[id] || "LingoFlow";
     sidebar.classList.remove("open");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -708,7 +708,7 @@ async function streamAiReply(message, selector = "#chatLog", mode = "teacher", s
     }
     return reply.trim();
   } catch {
-    bubble.textContent = "Backend offline. Run: node server.js in the backend folder.";
+    bubble.textContent = "Backend connection failed. Please check your internet connection or try again in a moment.";
     return bubble.textContent;
   }
 }

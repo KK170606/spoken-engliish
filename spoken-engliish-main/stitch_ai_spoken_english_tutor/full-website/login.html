@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login | Spoken English</title>
+    <title>Login | LingoFlow</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,21 +17,25 @@
       <section class="login-panel">
         <div class="login-brand">
           <span class="material-symbols-outlined">school</span>
-          <strong>Spoken English</strong>
+          <strong>LingoFlow</strong>
         </div>
-        <h1 id="login-title">Sign in</h1>
+        <p class="eyebrow">Spoken English Tutor</p>
+        <h1 id="login-title">Sign in to your learning space</h1>
+        <p class="login-copy">
+          Sign in or create an account to open the dashboard, stream AI replies, and practice live voice chat.
+        </p>
         <form class="login-form" id="loginForm">
           <label>
             Name
-            <input id="loginName" type="text" placeholder="Name" autocomplete="name" />
+            <input id="loginName" type="text" placeholder="Your name" autocomplete="name" />
           </label>
           <label>
             Email
-            <input id="loginEmail" type="email" placeholder="Email" autocomplete="email" required />
+            <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
           </label>
           <label>
             Password
-            <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password" required />
+            <input id="loginPassword" type="password" placeholder="Enter password" autocomplete="current-password" required />
           </label>
           <div class="login-actions">
             <button class="primary-button" id="loginSubmit" type="submit">
@@ -45,6 +49,34 @@
           </div>
           <p class="login-error" id="loginError" aria-live="polite"></p>
         </form>
+      </section>
+
+      <section class="login-preview" aria-label="LingoFlow features">
+        <div>
+          <span class="material-symbols-outlined">record_voice_over</span>
+          <strong>Real-time voice AI</strong>
+          <p>Speak naturally, get instant corrections, and hear polished examples back.</p>
+        </div>
+        <div>
+          <span class="material-symbols-outlined">monitoring</span>
+          <strong>Progress tracking</strong>
+          <p>Follow grammar, vocabulary, speaking, and listening growth in one dashboard.</p>
+        </div>
+        <div>
+          <span class="material-symbols-outlined">diversity_3</span>
+          <strong>Practice rooms</strong>
+          <p>Jump into extra interview, business, and daily conversation pages.</p>
+        </div>
+        <div>
+          <span class="material-symbols-outlined">menu_book</span>
+          <strong>Reference shelf</strong>
+          <p>
+            Open trusted study references:
+            <a href="https://learnenglish.britishcouncil.org/" target="_blank" rel="noreferrer">British Council</a>,
+            <a href="https://dictionary.cambridge.org/grammar/british-grammar/" target="_blank" rel="noreferrer">Cambridge Grammar</a>,
+            <a href="https://www.englishgrammar.org/" target="_blank" rel="noreferrer">EnglishGrammar.org</a>
+          </p>
+        </div>
       </section>
     </main>
 
